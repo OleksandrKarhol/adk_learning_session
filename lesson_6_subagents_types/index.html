@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speedy Rentals - Your Journey Starts Here</title>
+    <meta name="description" content="Speedy Rentals offers a diverse fleet of cars for every adventure. Easy online booking, flexible pick-up, and 24/7 support. Book your perfect ride today!">
+    <meta name="keywords" content="car rental, rent a car, vehicle hire, car hire, Speedy Rentals, economy cars, SUVs, luxury cars, travel, booking">
+    <link rel="canonical" href="https://www.speedyrentals.com/"> <!-- Replace with actual URL -->
+
+    <!-- Preconnect for faster resource loading (optional but good practice) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Optional: Custom scroll-behavior for smooth internal linking */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-gray-50">
+
+    <!-- Header & Navigation -->
+    <header class="bg-gray-900 text-white shadow-md sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#welcome" class="text-2xl font-bold text-blue-500 hover:text-blue-400 transition-colors duration-300" aria-label="Speedy Rentals Home">
+                Speedy Rentals
+            </a>
+
+            <!-- Mobile Menu Button (Hamburger) -->
+            <div class="md:hidden">
+                <button id="menu-button" class="text-white focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-md p-2" aria-label="Open main menu">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#welcome" class="hover:text-blue-400 transition-colors duration-300 px-3 py-2 rounded-md font-medium" aria-current="page">Home</a>
+                <a href="#fleet-services" class="hover:text-blue-400 transition-colors duration-300 px-3 py-2 rounded-md font-medium">Fleet & Services</a>
+                <a href="#booking" class="hover:text-blue-400 transition-colors duration-300 px-3 py-2 rounded-md font-medium">Book Now</a>
+                <a href="#contact-booking" class="hover:text-blue-400 transition-colors duration-300 px-3 py-2 rounded-md font-medium">Contact</a>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="md:hidden hidden bg-gray-800 py-2">
+            <a href="#welcome" class="block px-4 py-2 text-white hover:bg-gray-700 hover:text-blue-400" aria-current="page">Home</a>
+            <a href="#fleet-services" class="block px-4 py-2 text-white hover:bg-gray-700 hover:text-blue-400">Fleet & Services</a>
+            <a href="#booking" class="block px-4 py-2 text-white hover:bg-gray-700 hover:text-blue-400">Book Now</a>
+            <a href="#contact-booking" class="block px-4 py-2 text-white hover:bg-gray-700 hover:text-blue-400">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section 1: Welcome & Book Your Ride -->
+        <section id="welcome" class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-900 text-white">
+            <div class="max-w-7xl mx-auto text-center">
+                <!-- Main Heading -->
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
+                    Welcome to <span class="text-blue-500">Speedy Rentals</span>
+                </h1>
+                <!-- Subheading -->
+                <p class="text-xl sm:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto">
+                    Your journey begins here. Discover the perfect car for your adventure.
+                </p>
+
+                <!-- Call to Action for Booking -->
+                <div class="mb-12">
+                    <a href="#booking"
+                       class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 ease-in-out transform hover:scale-105
+                              focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50"
+                       aria-label="Book Your Ride Now">
+                        Book Your Ride Now
+                    </a>
+                </div>
+
+                <!-- Placeholder for a simple booking form or quick search (can be expanded) -->
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl max-w-2xl mx-auto" id="booking">
+                    <h2 class="text-3xl font-bold mb-6 text-white">Quick Search & Book</h2>
+                    <form class="grid grid-cols-1 md:grid-cols-2 gap-6" aria-label="Car Rental Quick Search Form">
+                        <!-- Pick-up Location -->
+                        <div>
+                            <label for="pickup-location" class="block text-gray-300 text-sm font-medium mb-2 sr-only">Pick-up Location</label>
+                            <input type="text" id="pickup-location" name="pickup-location" placeholder="Pick-up Location"
+                                   class="w-full px-4 py-3 rounded-md bg-gray-700 border border-gray-600 text-white placeholder-gray-400
+                                          focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                   aria-required="true">
+                        </div>
+                        <!-- Return Location -->
+                        <div>
+                            <label for="return-location" class="block text-gray-300 text-sm font-medium mb-2 sr-only">Return Location</label>
+                            <input type="text" id="return-location" name="return-location" placeholder="Return Location (if different)"
+                                   class="w-full px-4 py-3 rounded-md bg-gray-700 border border-gray-600 text-white placeholder-gray-400
+                                          focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        <!-- Pick-up Date -->
+                        <div>
+                            <label for="pickup-date" class="block text-gray-300 text-sm font-medium mb-2 sr-only">Pick-up Date</label>
+                            <input type="date" id="pickup-date" name="pickup-date"
+                                   class="w-full px-4 py-3 rounded-md bg-gray-700 border border-gray-600 text-white
+                                          focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                   aria-required="true">
+                        </div>
+                        <!-- Return Date -->
+                        <div>
+                            <label for="return-date" class="block text-gray-300 text-sm font-medium mb-2 sr-only">Return Date</label>
+                            <input type="date" id="return-date" name="return-date"
+                                   class="w-full px-4 py-3 rounded-md bg-gray-700 border border-gray-600 text-white
+                                          focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                   aria-required="true">
+                        </div>
+                        <!-- Search Button -->
+                        <div class="md:col-span-2">
+                            <button type="submit"
+                                    class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-md transition duration-300 ease-in-out
+                                           focus:outline-none focus:ring-4 focus:ring-green-500 focus:ring-opacity-50"
+                                    aria-label="Search for available cars">
+                                Search Cars
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Explore Our Fleet & Services -->
+        <section id="fleet-services" class="py-16 px-4 sm:px-6 lg:px-8 bg-white text-gray-800">
+            <div class="max-w-7xl mx-auto">
+                <!-- Section Heading -->
+                <h2 class="text-4xl sm:text-5xl font-extrabold text-center mb-12 text-gray-900">
+                    Explore Our <span class="text-blue-600">Fleet & Services</span>
+                </h2>
+
+                <!-- Fleet Showcase -->
+                <div class="mb-16">
+                    <h3 class="text-3xl font-bold text-center mb-8 text-gray-900">Our Diverse Fleet</h3>
+                    <p class="text-lg text-center text-gray-700 mb-10 max-w-3xl mx-auto">
+                        From economic compacts to luxurious SUVs, find the perfect vehicle for every occasion and budget.
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Car Category Card 1 -->
+                        <div class="bg-gray-100 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                            <img src="https://via.placeholder.com/400x250/2563eb/ffffff?text=Economy+Cars" alt="Image of an Economy Car" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h4 class="text-2xl font-semibold mb-3 text-gray-900">Economy Cars</h4>
+                                <p class="text-gray-700 mb-4">
+                                    Perfect for city commutes and budget-friendly travel. Efficient and easy to park.
+                                </p>
+                                <ul class="list-disc list-inside text-gray-600 mb-4">
+                                    <li>Fuel-efficient models</li>
+                                    <li>Compact & nimble</li>
+                                    <li>Great for solo or duo travelers</li>
+                                </ul>
+                                <a href="#booking"
+                                   class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-5 rounded-full transition duration-300 ease-in-out"
+                                   aria-label="View Economy Car Models">
+                                    View Models
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Car Category Card 2 -->
+                        <div class="bg-gray-100 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                            <img src="https://via.placeholder.com/400x250/2563eb/ffffff?text=SUVs" alt="Image of an SUV" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h4 class="text-2xl font-semibold mb-3 text-gray-900">SUVs & Family Cars</h4>
+                                <p class="text-gray-700 mb-4">
+                                    Spacious and comfortable for family trips and adventures.
+                                </p>
+                                <ul class="list-disc list-inside text-gray-600 mb-4">
+                                    <li>Ample space for luggage</li>
+                                    <li>Comfortable seating</li>
+                                    <li>Ideal for group travel</li>
+                                </ul>
+                                <a href="#booking"
+                                   class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-5 rounded-full transition duration-300 ease-in-out"
+                                   aria-label="View SUV and Family Car Models">
+                                    View Models
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Car Category Card 3 -->
+                        <div class="bg-gray-100 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                            <img src="https://via.placeholder.com/400x250/2563eb/ffffff?text=Luxury+Vehicles" alt="Image of a Luxury Vehicle" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h4 class="text-2xl font-semibold mb-3 text-gray-900">Luxury & Premium</h4>
+                                <p class="text-gray-700 mb-4">
+                                    Experience elegance and superior performance on the road.
+                                </p>
+                                <ul class="list-disc list-inside text-gray-600 mb-4">
+                                    <li>High-end features</li>
+                                    <li>Enhanced comfort</li>
+                                    <li>Make a statement</li>
+                                </ul>
+                                <a href="#booking"
+                                   class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-5 rounded-full transition duration-300 ease-in-out"
+                                   aria-label="View Luxury and Premium Vehicle Models">
+                                    View Models
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Global Call to Action for Fleet -->
+                    <div class="text-center mt-12">
+                        <a href="#booking"
+                           class="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 ease-in-out transform hover:scale-105
+                                  focus:outline-none focus:ring-4 focus:ring-green-500 focus:ring-opacity-50"
+                           aria-label="Browse All Available Cars">
+                            Browse All Cars
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Our Services Section -->
+                <div>
+                    <h3 class="text-3xl font-bold text-center mb-8 text-gray-900">Our Premium Services</h3>
+                    <p class="text-lg text-center text-gray-700 mb-10 max-w-3xl mx-auto">
+                        We're committed to providing you with a seamless and enjoyable rental experience.
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Service Card 1 -->
+                        <div class="flex flex-col items-center text-center bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                            <div class="text-blue-600 mb-4" role="img" aria-label="24/7 Roadside Assistance Icon">
+                                <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                            <h4 class="text-xl font-semibold mb-3 text-gray-900">24/7 Roadside Assistance</h4>
+                            <p class="text-gray-700">
+                                Peace of mind with around-the-clock support, wherever your journey takes you.
+                            </p>
+                        </div>
+
+                        <!-- Service Card 2 -->
+                        <div class="flex flex-col items-center text-center bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                            <div class="text-blue-600 mb-4" role="img" aria-label="Flexible Pick-up & Return Icon">
+                                <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            </div>
+                            <h4 class="text-xl font-semibold mb-3 text-gray-900">Flexible Pick-up & Return</h4>
+                            <p class="text-gray-700">
+                                Convenient locations and customizable timings to suit your schedule.
+                            </p>
+                        </div>
+
+                        <!-- Service Card 3 -->
+                        <div class="flex flex-col items-center text-center bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                            <div class="text-blue-600 mb-4" role="img" aria-label="Transparent Pricing Icon">
+                                <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                            </div>
+                            <h4 class="text-xl font-semibold mb-3 text-gray-900">Transparent Pricing</h4>
+                            <p class="text-gray-700">
+                                No hidden fees, just straightforward and competitive rental rates.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Simple Booking & Get in Touch -->
+        <section id="contact-booking" class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-900 text-white">
+            <div class="max-w-7xl mx-auto text-center">
+                <!-- Section Heading -->
+                <h2 class="text-4xl sm:text-5xl font-extrabold mb-6 leading-tight text-white">
+                    Simple Booking & <span class="text-blue-500">Get in Touch</span>
+                </h2>
+                <!-- Subheading -->
+                <p class="text-xl sm:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto">
+                    Booking your next ride is just a few clicks away. Have questions? We're here to help!
+                </p>
+
+                <!-- Booking Process Steps -->
+                <div class="mb-16">
+                    <h3 class="text-3xl font-bold mb-8 text-white">Our Easy 3-Step Booking Process</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- Step 1 -->
+                        <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                            <div class="text-blue-400 text-5xl font-bold mb-4">1</div>
+                            <h4 class="text-2xl font-semibold mb-3 text-white">Choose Your Car</h4>
+                            <p class="text-gray-300">
+                                Browse our extensive fleet and select the vehicle that best suits your needs and style.
+                            </p>
+                        </div>
+                        <!-- Step 2 -->
+                        <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                            <div class="text-blue-400 text-5xl font-bold mb-4">2</div>
+                            <h4 class="text-2xl font-semibold mb-3 text-white">Select Dates & Location</h4>
+                            <p class="text-gray-300">
+                                Specify your pick-up and return dates and locations for a seamless experience.
+                            </p>
+                        </div>
+                        <!-- Step 3 -->
+                        <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                            <div class="text-blue-400 text-5xl font-bold mb-4">3</div>
+                            <h4 class="text-2xl font-semibold mb-3 text-white">Confirm & Drive</h4>
+                            <p class="text-gray-300">
+                                Review your booking, make a secure payment, and get ready to hit the road!
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Call to Action for Booking -->
+                    <div class="mt-12">
+                        <a href="#booking"
+                           class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 ease-in-out transform hover:scale-105
+                                  focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50"
+                           aria-label="Start Your Booking Now">
+                            Start Your Booking Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div>
+                    <h3 class="text-3xl font-bold mb-8 text-white">Get in Touch With Us</h3>
+                    <p class="text-lg text-gray-300 mb-8 max-w-3xl mx-auto">
+                        Our friendly customer service team is ready to assist you with any inquiries.
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Phone Contact -->
+                        <div class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col items-center">
+                            <div class="text-blue-400 mb-4" role="img" aria-label="Phone Icon">
+                                <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"></path></svg>
+                            </div>
+                            <h4 class="text-xl font-semibold mb-2 text-white">Call Us</h4>
+                            <a href="tel:+1234567890" class="text-lg text-blue-300 hover:underline">+1 (234) 567-890</a>
+                        </div>
+
+                        <!-- Email Contact -->
+                        <div class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col items-center">
+                            <div class="text-blue-400 mb-4" role="img" aria-label="Email Icon">
+                                <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-9 6h.01M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            </div>
+                            <h4 class="text-xl font-semibold mb-2 text-white">Email Us</h4>
+                            <a href="mailto:info@speedyrentals.com" class="text-lg text-blue-300 hover:underline">info@speedyrentals.com</a>
+                        </div>
+
+                        <!-- Address / Location -->
+                        <div class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col items-center">
+                            <div class="text-blue-400 mb-4" role="img" aria-label="Location Pin Icon">
+                                <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            </div>
+                            <h4 class="text-xl font-semibold mb-2 text-white">Visit Our Office</h4>
+                            <p class="text-lg text-gray-300">123 Car Rental St, Cityville, CR 12345</p>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form Call to Action (Optional) -->
+                    <div class="mt-12">
+                        <a href="mailto:info@speedyrentals.com?subject=Inquiry from Website"
+                           class="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 ease-in-out transform hover:scale-105
+                                  focus:outline-none focus:ring-4 focus:ring-green-500 focus:ring-opacity-50"
+                           aria-label="Send Us a Message via Email">
+                            Send Us a Message
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 py-8 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto text-center md:flex md:justify-between md:items-center">
+            <div class="mb-4 md:mb-0">
+                <p>&copy; <span id="current-year"></span> Speedy Rentals. All rights reserved.</p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
+                <a href="#welcome" class="hover:text-blue-400 transition-colors duration-300">Privacy Policy</a>
+                <a href="#welcome" class="hover:text-blue-400 transition-colors duration-300">Terms of Service</a>
+                <a href="#contact-booking" class="hover:text-blue-400 transition-colors duration-300">Support</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dynamically set the current year for the copyright
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle functionality
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const isExpanded = menuButton.getAttribute('aria-expanded') === 'true' || false;
+            menuButton.setAttribute('aria-expanded', !isExpanded);
+        });
+
+        // Close mobile menu when a link is clicked
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuButton.setAttribute('aria-expanded', 'false');
+            });
+        });
+    </script>
+</body>
+</html>
